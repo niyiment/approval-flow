@@ -18,7 +18,15 @@
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>lead-dev</id>
+			<name>Niyi Ogungbemi</name>
+			<email>niyiment@gmail.com</email>
+			<roles>
+				<role>Lead Developer</role>
+				<role>Architect</role>
+			</roles>
+		</developer>
 	</developers>
 	<scm>
 		<connection/>
@@ -32,7 +40,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -40,11 +48,13 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.statemachine</groupId>
 			<artifactId>spring-statemachine-core</artifactId>
 			<version>3.2.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
