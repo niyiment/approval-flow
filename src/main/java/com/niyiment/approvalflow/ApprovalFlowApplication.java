@@ -1,4 +1,4 @@
-package com.niyiment.approval_flow;
+package com.niyiment.approvalflow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.niyiment.approval_flow;
+package com.niyiment.approvalflow;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
