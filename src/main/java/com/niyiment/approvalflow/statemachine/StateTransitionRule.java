@@ -6,9 +6,6 @@ import com.niyiment.approvalflow.enums.FileType;
 import com.niyiment.approvalflow.enums.Priority;
 import com.niyiment.approvalflow.models.FileTrackingItem;
 import com.niyiment.approvalflow.models.User;
-
-import java.io.File;
-
 import static com.niyiment.approvalflow.enums.Action.SUBMIT;
 
 public class StateTransitionRule {

@@ -14,4 +14,13 @@ public class StateTransition {
     private User performedBy;
     private LocalDateTime timestamp;
     private String comment;
+
+    public StateTransition(FileState fromState, FileState toState, Action action, User performedBy, String comment) {
+            this.fromState = fromState;
+            this.toState = toState;
+            this.action = action;
+            this.performedBy = performedBy;
+            this.comment = comment;
+            this.timestamp = LocalDateTime.now();
+    }
 }

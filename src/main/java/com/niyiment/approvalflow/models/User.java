@@ -10,4 +10,12 @@ public class User {
     private String department;
     // 0 = regular user, 1-3 = approval levels
     private int approvalLevel;
+
+    public User(String id, String name, String email, String department, int approvalLevel) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.department = department;
+        this.approvalLevel = approvalLevel;
+    }
 }
