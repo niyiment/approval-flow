@@ -2,6 +2,7 @@ package com.niyiment.approvalflow.entity;
 
 
 import com.niyiment.approvalflow.enums.ApprovalState;
+import com.niyiment.approvalflow.enums.Priority;
 import com.niyiment.approvalflow.enums.RequestType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -60,6 +61,9 @@ public class ApprovalRequest {
     private String department;
 
     @Enumerated(EnumType.STRING)
+    private Priority priority;
+
+    @Enumerated(EnumType.STRING)
     private ApprovalState currentState;
 
     private String currentApprover;
@@ -68,7 +72,7 @@ public class ApprovalRequest {
     private String level1Approver;
 
     @Column(name = "level2_approver")
-    private String level2Approval;
+    private String level2Approver;
 
     @Column(name = "level3_approver")
     private String level3Approver;
@@ -88,7 +92,7 @@ public class ApprovalRequest {
 
     @OneToMany(mappedBy = "request", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
-    private List<NotificationLog>  notifications = new ArrayList<>();
+    private List<NotificationLog> notifications = new ArrayList<>();
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -98,6 +102,11 @@ public class ApprovalRequest {
 
     private String rejectionReason;
     private String cancellationReason;
+
+    public void addNotification(NotificationLog log) {
+        notifications.add(log);
+        log.setRequest(this);
+    }
 
     public boolean requiresLevel3Approval() {
         return amount.compareTo(new BigDecimal("10000000")) > 0 ||
@@ -111,7 +120,10 @@ public class ApprovalRequest {
     }
 
     public long getDaysInCurrentState() {
-        return Duration.between(lastActionAt, LocalDateTime.now()).toDays();
+        if (lastActionAt != null) {
+            return Duration.between(lastActionAt, LocalDateTime.now()).toDays();
+        }
+        return 0L;
     }
 
 }

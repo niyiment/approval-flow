@@ -1,0 +1,87 @@
+spring:
+  application:
+    name: approval-flow
+  mvc:
+    favicon:
+      enabled: false
+
+  # Database Configuration
+  datasource:
+    url: jdbc:h2:mem:approvaldb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  # JPA Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # H2 Console (for development)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # Mail Configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  # Scheduling
+  task:
+    scheduling:
+      pool:
+        size: 5
+
+# Logging Configuration
+logging:
+  level:
+    com.niyiment.approvalflow: DEBUG
+    org.springframework.statemachine: DEBUG
+    org.springframework.mail: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/approval-flow.log
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Custom Application Properties
+approval:
+  system:
+    base-url: http://localhost:8080
+    from-email: approvals@company.com
+    admin-email: admin@company.com
+
+  # Notification thresholds (in days)
+  notifications:
+    normal-reminder: 2
+    warning-reminder: 4
+    escalation-threshold: 6
+    expiration-threshold: 8
+
+springdoc:
+  api-docs:
+    path: /api-docs

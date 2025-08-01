@@ -1,0 +1,52 @@
+2025-08-01 22:17:06 [main] INFO  c.n.a.ApprovalFlowApplication - Starting ApprovalFlowApplication using Java 24 with PID 85382 (/Users/niyi/Documents/development/java/projects/public/approval-flow/target/classes started by niyi in /Users/niyi/Documents/development/java/projects/public/approval-flow)
+2025-08-01 22:17:06 [main] DEBUG c.n.a.ApprovalFlowApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-01 22:17:06 [main] INFO  c.n.a.ApprovalFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-01 22:17:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-01 22:17:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2025-08-01 22:17:18 [main] INFO  c.n.a.ApprovalFlowApplication - Starting ApprovalFlowApplication using Java 24 with PID 85419 (/Users/niyi/Documents/development/java/projects/public/approval-flow/target/classes started by niyi in /Users/niyi/Documents/development/java/projects/public/approval-flow)
+2025-08-01 22:17:18 [main] DEBUG c.n.a.ApprovalFlowApplication - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-01 22:17:18 [main] INFO  c.n.a.ApprovalFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-01 22:17:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-01 22:17:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
+2025-08-01 22:17:19 [main] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration' of type [org.springframework.statemachine.config.configuration.StateMachineAnnotationPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [org.springframework.statemachine.processor.stateMachineAnnotationPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-08-01 22:17:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-01 22:17:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-01 22:17:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-01 22:17:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-01 22:17:19 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 894 ms
+2025-08-01 22:17:19 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-01 22:17:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-01 22:17:20 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-01 22:17:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-01 22:17:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-01 22:17:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:approvaldb user=SA
+2025-08-01 22:17:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-01 22:17:20 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-01 22:17:20 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-01 22:17:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-01 22:17:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-01 22:17:21 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-01 22:17:21 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-01 22:17:21 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:approvaldb'
+2025-08-01 22:17:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-01 22:17:21 [main] INFO  c.n.a.ApprovalFlowApplication - Started ApprovalFlowApplication in 3.154 seconds (process running for 3.384)
+2025-08-01 22:17:21 [scheduling-1] INFO  c.n.a.service.NotificationService - Starting reminder notification job
+2025-08-01 22:17:21 [main] INFO  c.n.a.config.DataInitializer - Initializing sample data...
+2025-08-01 22:17:21 [main] INFO  c.n.a.config.DataInitializer - Sample data initialized with 4 requests
+2025-08-01 22:17:31 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-01 22:17:31 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-01 22:17:31 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-01 22:17:31 [http-nio-8080-exec-1] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 422 ms
+2025-08-01 22:19:36 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-01 22:19:39 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-08-01 22:19:39 [SpringApplicationShutdownHook] INFO  o.s.s.s.DefaultStateMachineService - Entering stop sequence, stopping all managed machines
+2025-08-01 22:19:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-01 22:19:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-08-01 22:19:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 
 /**
- * Entity for request attachements
+ * Entity for request attachments
  */
 
 @Entity

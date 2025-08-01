@@ -1,4 +1,4 @@
-package com.niyiment.approvalflow;
+package com.niyiment.approvalflow.config;
 
 
 import com.niyiment.approvalflow.enums.ApprovalEvent;
@@ -6,24 +6,34 @@ import com.niyiment.approvalflow.enums.ApprovalState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.Message;
-import org.springframework.statemachine.StateContext;
-import org.springframework.statemachine.StateMachine;
-import org.springframework.statemachine.config.EnableStateMachine;
+import org.springframework.statemachine.config.EnableStateMachineFactory;
 import org.springframework.statemachine.config.StateMachineConfigurerAdapter;
+import org.springframework.statemachine.config.StateMachineFactory;
+import org.springframework.statemachine.config.builders.StateMachineConfigurationConfigurer;
 import org.springframework.statemachine.config.builders.StateMachineStateConfigurer;
 import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.statemachine.listener.StateMachineListener;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
+import org.springframework.statemachine.persist.DefaultStateMachinePersister;
+import org.springframework.statemachine.persist.StateMachinePersister;
+import org.springframework.statemachine.service.DefaultStateMachineService;
+import org.springframework.statemachine.service.StateMachineService;
 import org.springframework.statemachine.state.State;
 import org.springframework.statemachine.transition.Transition;
 
 import java.util.EnumSet;
 
 @Configuration
-@EnableStateMachine
+@EnableStateMachineFactory
 @Slf4j
 public class StateMachineConfig extends StateMachineConfigurerAdapter<ApprovalState, ApprovalEvent> {
+
+    @Override
+    public void configure(StateMachineConfigurationConfigurer<ApprovalState, ApprovalEvent> config) throws Exception {
+        config.withConfiguration()
+                .autoStartup(true)
+                .listener(stateMachineListener());
+    }
 
     @Override
     public void configure(StateMachineStateConfigurer<ApprovalState, ApprovalEvent> states) throws Exception {
@@ -198,6 +208,19 @@ public class StateMachineConfig extends StateMachineConfigurerAdapter<ApprovalSt
                 .target(ApprovalState.EXPIRED)
                 .event(ApprovalEvent.EXPIRE);
 
+    }
+
+
+    @Bean
+    public StateMachineService<ApprovalState, ApprovalEvent> stateMachineService(
+            StateMachineFactory<ApprovalState, ApprovalEvent> stateMachineFactory
+    ) {
+        return new DefaultStateMachineService<>(stateMachineFactory);
+    }
+
+    @Bean
+    public StateMachinePersister<ApprovalState, ApprovalEvent, String> stateMachinePersister() {
+        return new DefaultStateMachinePersister<>(new InMemoryStateMachinePersist());
     }
 
     @Bean
