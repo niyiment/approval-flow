@@ -14,7 +14,7 @@ import java.util.List;
 public record ApprovalRequestDto(
          Long id,
          String requestNumber,
-         RequestType requestType,
+         RequestType type,
          String title,
          String description,
          BigDecimal amount,
@@ -44,7 +44,7 @@ public record ApprovalRequestDto(
         return ApprovalRequestDto.builder()
                 .id(entity.getId())
                 .requestNumber(entity.getRequestNumber())
-                .requestType(entity.getRequestType())
+                .type(entity.getRequestType())
                 .title(entity.getTitle())
                 .description(entity.getDescription())
                 .amount(entity.getAmount())
